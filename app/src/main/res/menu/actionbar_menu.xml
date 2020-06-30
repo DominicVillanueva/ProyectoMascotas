@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/iViewFavorite"
+        android:icon="@drawable/favorite"
+        app:showAsAction="always"
+        android:title="goToFavorite"/>
+
+    <item
+        android:id="@+id/options"
+        android:title="Options"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_more_vert_white_32dp"/>
+</menu>
