@@ -35,4 +35,10 @@ dependencies {
     // Material
     implementation 'com.android.support:cardview-v7:29.0.0'
     implementation 'com.android.support:recyclerview-v7:29.0.0'
+    implementation 'com.android.support:design:29.0.0'
+
+    //Add those line in dependencies
+    implementation files('libs/activation.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/mail.jar')
 }

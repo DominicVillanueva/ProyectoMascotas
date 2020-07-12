@@ -1,4 +1,4 @@
-package com.dominicavs.proyectomascotas;
+package com.dominicavs.proyectomascotas.views;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dominicavs.proyectomascotas.R;
 import com.dominicavs.proyectomascotas.adapters.MascotaAdapter;
 import com.dominicavs.proyectomascotas.model.Mascota;
 

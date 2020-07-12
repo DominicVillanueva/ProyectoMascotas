@@ -12,5 +12,16 @@
         android:id="@+id/options"
         android:title="Options"
         app:showAsAction="always"
-        android:icon="@drawable/ic_more_vert_white_32dp"/>
+        android:icon="@drawable/ic_more_vert_white_32dp">
+        <menu>
+            <item
+                android:id="@+id/iContact"
+                app:showAsAction="never"
+                android:title="Contacto"/>
+            <item
+                android:id="@+id/iAboutMe"
+                app:showAsAction="never"
+                android:title="Acerca de"/>
+        </menu>
+    </item>
 </menu>

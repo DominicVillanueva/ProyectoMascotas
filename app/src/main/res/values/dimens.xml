@@ -2,6 +2,7 @@
 <resources>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="pa_2">8dp</dimen>
+    <dimen name="pa_3">16dp</dimen>
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="mr_4">32dp</dimen>
     <dimen name="mb_3">16dp</dimen>

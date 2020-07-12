@@ -11,12 +11,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dominicavs.proyectomascotas.adapters.MascotaAdapter;
 import com.dominicavs.proyectomascotas.model.Mascota;
+import com.dominicavs.proyectomascotas.views.ActivityFavoritPets;
+import com.dominicavs.proyectomascotas.views.ContactActivity;
 
 import java.util.ArrayList;
 
@@ -57,11 +58,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.iViewFavorite:
-                Intent i = new Intent(MainActivity.this, ActivityFavoritPets.class);
-                startActivity(i);
+                Intent iViewFavorite = new Intent(MainActivity.this, ActivityFavoritPets.class);
+                startActivity(iViewFavorite);
                 break;
-            case R.id.options:
-                Toast.makeText(this, "OPCIONES", Toast.LENGTH_SHORT).show();
+            case R.id.iContact:
+                Intent iContact = new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(iContact);
+                break;
+            case R.id.iAboutMe:
+                Toast.makeText(this, "Acerca de Mi", Toast.LENGTH_SHORT).show();
+                break;
+            default:
                 break;
         }
         return super.onOptionsItemSelected(item);

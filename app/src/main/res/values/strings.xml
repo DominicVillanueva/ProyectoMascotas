@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Petagram</string>
+    <string name="hint_name">Nombre Completo</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_message">Mensaje</string>
+    <string name="name_button">Enviar Comentario</string>
+    <string name="name_email">Petagram App</string>
 </resources>
