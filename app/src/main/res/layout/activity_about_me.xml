@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.AboutMeActivity"
+    >
+
+    <include
+        android:id="@+id/inActionBar"
+        layout="@layout/actionbar"/>
+
+    <RelativeLayout
+        android:layout_below="@id/inActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pa_2">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/civPhotoProfile"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/perfil"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp"
+            app:civ_shadow="true"
+            app:civ_shadow_radius="8dp"
+            app:civ_shadow_color="@color/colorAccent"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tvDescProfile"
+            android:layout_below="@id/civPhotoProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/mt_2"
+            android:gravity="center"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/textsize_12"
+            android:autoLink="web"/>
+
+        <TextView
+            android:id="@+id/tvMessageProfile"
+            android:layout_below="@id/tvDescProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/message_profile"
+            android:layout_marginTop="@dimen/mt_1"
+            android:textSize="@dimen/textsize_12"
+            android:fontFamily="cursive"
+            android:layout_alignParentRight="true"/>
+
+        <View
+            android:id="@+id/viewDividerProfile"
+            android:layout_below="@id/tvMessageProfile"
+            android:layout_marginTop="@dimen/mt_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLinea"/>
+
+        <LinearLayout
+            android:id="@+id/lilayGithub"
+            android:layout_below="@id/viewDividerProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mt_4">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_github_profile"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/link_github"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:textColor="@color/colorText"
+                android:autoLink="web"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lilayGitlab"
+            android:layout_below="@id/lilayGithub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mt_2">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_gitlab_profile"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/link_gitlab"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:textColor="@color/colorText"
+                android:autoLink="web"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lilayFacebook"
+            android:layout_below="@id/lilayGitlab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mt_2">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_facebook_profile"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/link_facebook"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:textColor="@color/colorText"
+                android:autoLink="web"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

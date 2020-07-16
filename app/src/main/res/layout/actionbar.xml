@@ -22,7 +22,7 @@
         android:textColor="@color/colorWhite"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:textSize="@dimen/text_size_20"
+        android:textSize="@dimen/text_toolbar"
         android:text="Title" />
 
 </androidx.appcompat.widget.Toolbar>

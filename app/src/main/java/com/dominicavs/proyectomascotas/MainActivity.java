@@ -3,8 +3,8 @@ package com.dominicavs.proyectomascotas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,20 +14,23 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dominicavs.proyectomascotas.adapters.MascotaAdapter;
-import com.dominicavs.proyectomascotas.model.Mascota;
+import com.dominicavs.proyectomascotas.adapters.FragmentAdapter;
+import com.dominicavs.proyectomascotas.fragments.PetsFragment;
+import com.dominicavs.proyectomascotas.fragments.ProfilePetsFragment;
+import com.dominicavs.proyectomascotas.views.AboutMeActivity;
 import com.dominicavs.proyectomascotas.views.ActivityFavoritPets;
 import com.dominicavs.proyectomascotas.views.ContactActivity;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar inActionBar;
-    private RecyclerView rvMascotas;
     private TextView tvToolbarTitle;
-    private ArrayList<Mascota> mascotas;
-    private MascotaAdapter mascotaAdapter;
+    private TabLayout tlPets;
+    private ViewPager vpPets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +42,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(inActionBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        rvMascotas = (RecyclerView) findViewById(R.id.rvMascotas);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        rvMascotas.setLayoutManager(layoutManager);
-        iniciarListaMascotas();
-        iniciarAdapterMascota();
+        tlPets = (TabLayout) findViewById(R.id.tlPets);
+        vpPets = (ViewPager) findViewById(R.id.vpPets);
+        setUpViewPager();
     }
 
     @Override
@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(iContact);
                 break;
             case R.id.iAboutMe:
-                Toast.makeText(this, "Acerca de Mi", Toast.LENGTH_SHORT).show();
+                Intent iAboutMe = new Intent(MainActivity.this, AboutMeActivity.class);
+                startActivity(iAboutMe);
                 break;
             default:
                 break;
@@ -74,17 +75,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void iniciarAdapterMascota() {
-        mascotaAdapter = new MascotaAdapter(mascotas, this);
-        rvMascotas.setAdapter(mascotaAdapter);
+    private void setUpViewPager() {
+        vpPets.setAdapter(new FragmentAdapter(getSupportFragmentManager(), addFragments()));
+        tlPets.setupWithViewPager(vpPets);
+        tlPets.getTabAt(0).setIcon(R.mipmap.ic_home_pet);
+        tlPets.getTabAt(1).setIcon(R.mipmap.ic_profile_pet);
     }
 
-    private void iniciarListaMascotas() {
-        mascotas = new ArrayList<>();
-        mascotas.add(new Mascota("Luffy", R.drawable.mascota1,6));
-        mascotas.add(new Mascota("Draco", R.drawable.mascota2, 5));
-        mascotas.add(new Mascota("Neron", R.drawable.mascota3,10 ));
-        mascotas.add(new Mascota("Bethoven", R.drawable.mascota4, 4));
-        mascotas.add(new Mascota("Firulais", R.drawable.mascota5,8));
+    private ArrayList<Fragment> addFragments() {
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new PetsFragment());
+        fragments.add(new ProfilePetsFragment());
+        return fragments;
     }
 }

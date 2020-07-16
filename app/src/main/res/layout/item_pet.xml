@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/ivFoto"
             android:layout_width="match_parent"
-            android:layout_height="260dp"
+            android:layout_height="245dp"
             android:scaleType="centerCrop"
             android:src="@drawable/mascota2"/>
 

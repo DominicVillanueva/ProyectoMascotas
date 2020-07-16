@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ProfilePetsFragment"
+    android:padding="@dimen/pa_2">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/civPhotoPet"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/avatarpet"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="2dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="8dp"
+        app:civ_shadow_color="@color/colorAccent"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvNamePet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Neron"
+        android:textSize="@dimen/textsize_24"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/civPhotoPet"
+        android:layout_marginTop="@dimen/mt_2"
+        android:layout_marginBottom="@dimen/mb_2"/>
+
+    <View
+        android:id="@+id/viewDividerPet"
+        android:layout_below="@id/tvNamePet"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLinea"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProfilePet"
+        android:layout_below="@id/viewDividerPet"
+        android:layout_marginTop="@dimen/mt_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

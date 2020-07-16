@@ -52,7 +52,7 @@ public class JavaMailAPI extends AsyncTask<Message,String,String>  {
             //When success
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setCancelable(false);
-            builder.setTitle(Html.fromHtml("<font color='#509324'>Success</font>"));
+            builder.setTitle(Html.fromHtml("<font color='#509324'>Exitoso</font>"));
             builder.setMessage("Correo Enviado correctamente.");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override

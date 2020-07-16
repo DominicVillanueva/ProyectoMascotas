@@ -5,4 +5,17 @@
     <string name="hint_message">Mensaje</string>
     <string name="name_button">Enviar Comentario</string>
     <string name="name_email">Petagram App</string>
+
+    <string name="description_profile">
+        Hola, me llamo Dominic tengo 22 años y soy de Perú - Lima, soy un joven apasionado por las tecnologías, me encanta programar
+        en mis ratos libres, actualmente estudió en la Universidad Tecnológica del Perú (UTP) en la carrera de Ing. de Sistemas.
+        Tambien trabajo en la empresa CIPSA en el área de Desarrollo de Software, en la cuál, tengo el cargo de Analista Programador.
+    </string>
+
+    <string name="message_profile">Programar hacía un futuro.</string>
+
+    <string name="link_github">https://github.com/DominicVillanueva</string>
+    <string name="link_gitlab">https://gitlab.com/DominicVillanueva</string>
+    <string name="link_linkedin">linkedin.com/in/dominic-aybar-villanueva-a48657124/</string>
+    <string name="link_facebook">https://www.facebook.com/dominic.villanuevaa/</string>
 </resources>
