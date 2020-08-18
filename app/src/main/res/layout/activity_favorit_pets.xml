@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ActivityFavoritPets">
+    tools:context=".views.ActivityFavoritePets">
 
     <include
         android:id="@+id/inActionBarFP"
         layout="@layout/actionbar"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvMascotasFP"
+        android:id="@+id/rvFavoritePets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/pa_2"

@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.ActivityFavoritPets"
+            android:name=".views.ActivityFavoritePets"
             android:parentActivityName=".MainActivity">
 
             <!-- SOPORTE PARA VERSIONES 4.0 O MENORES -->

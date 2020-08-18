@@ -12,13 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.dominicavs.proyectomascotas.adapters.FragmentAdapter;
 import com.dominicavs.proyectomascotas.fragments.PetsFragment;
 import com.dominicavs.proyectomascotas.fragments.ProfilePetsFragment;
 import com.dominicavs.proyectomascotas.views.AboutMeActivity;
-import com.dominicavs.proyectomascotas.views.ActivityFavoritPets;
+import com.dominicavs.proyectomascotas.views.ActivityFavoritePets;
 import com.dominicavs.proyectomascotas.views.ContactActivity;
 import com.google.android.material.tabs.TabLayout;
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.iViewFavorite:
-                Intent iViewFavorite = new Intent(MainActivity.this, ActivityFavoritPets.class);
+                Intent iViewFavorite = new Intent(MainActivity.this, ActivityFavoritePets.class);
                 startActivity(iViewFavorite);
                 break;
             case R.id.iContact:

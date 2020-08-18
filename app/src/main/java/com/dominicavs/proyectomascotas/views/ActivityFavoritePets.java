@@ -14,18 +14,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dominicavs.proyectomascotas.R;
+import com.dominicavs.proyectomascotas.adapters.FavoritePetAdapter;
 import com.dominicavs.proyectomascotas.adapters.MascotaAdapter;
+import com.dominicavs.proyectomascotas.presenter.IViewPresenter;
+import com.dominicavs.proyectomascotas.presenter.ViewPresenter;
+import com.dominicavs.proyectomascotas.views.interfaces.IActivityView;
 import com.dominicavs.proyectomascotas.model.Mascota;
 
 import java.util.ArrayList;
 
-public class ActivityFavoritPets extends AppCompatActivity {
+public class ActivityFavoritePets extends AppCompatActivity implements IActivityView {
 
     private Toolbar inActionBarFP;
     private TextView tvToolbarTitle;
-    private RecyclerView rvMascotasFP;
-    private ArrayList<Mascota> mascotas;
-    private MascotaAdapter mascotaAdapter;
+    private RecyclerView rvFavoritePets;
+    private IViewPresenter iViewPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +41,8 @@ public class ActivityFavoritPets extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        rvMascotasFP = (RecyclerView) findViewById(R.id.rvMascotasFP);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        rvMascotasFP.setLayoutManager(layoutManager);
-
-        iniciarListaMascotas();
-        iniciarAdapterMascota();
+        rvFavoritePets = (RecyclerView) findViewById(R.id.rvFavoritePets);
+        iViewPresenter = new ViewPresenter(this, this);
     }
 
     @Override
@@ -64,17 +62,21 @@ public class ActivityFavoritPets extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void iniciarListaMascotas() {
-        mascotas = new ArrayList<>();
-        mascotas.add(new Mascota("Bethoven", R.drawable.mascota4, 4));
-        mascotas.add(new Mascota("Neron", R.drawable.mascota3,10 ));
-        mascotas.add(new Mascota("Luffy", R.drawable.mascota1,6));
-        mascotas.add(new Mascota("Firulais", R.drawable.mascota5,8));
-        mascotas.add(new Mascota("Draco", R.drawable.mascota2, 5));
+    @Override
+    public void generateLayout() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rvFavoritePets.setLayoutManager(layoutManager);
     }
 
-    private void iniciarAdapterMascota() {
-        mascotaAdapter = new MascotaAdapter(mascotas, this);
-        rvMascotasFP.setAdapter(mascotaAdapter);
+    @Override
+    public FavoritePetAdapter createAdapter(ArrayList<Mascota> mascotas) {
+        FavoritePetAdapter favoritePetAdapter = new FavoritePetAdapter(mascotas, this);
+        return favoritePetAdapter;
+    }
+
+    @Override
+    public void initializeAdapter(FavoritePetAdapter favoritePetAdapter) {
+        rvFavoritePets.setAdapter(favoritePetAdapter);
     }
 }

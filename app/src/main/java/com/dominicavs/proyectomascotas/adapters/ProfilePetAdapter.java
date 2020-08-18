@@ -36,7 +36,7 @@ public class ProfilePetAdapter extends RecyclerView.Adapter<ProfilePetAdapter.Pr
     public void onBindViewHolder(@NonNull ProfilePetAdapter.ProfilepPetAdapterViewHolder holder, int position) {
         final Mascota profilePet = profileMascotas.get(position);
         holder.ivFotoProfilePet.setImageResource(profilePet.getFoto());
-        holder.tvCantRaitingProfilePet.setText(String.valueOf(profilePet.getCantRaiting()));
+        holder.tvCantRaitingProfilePet.setText(String.valueOf(profilePet.getQuantity_raiting()));
     }
 
     @Override

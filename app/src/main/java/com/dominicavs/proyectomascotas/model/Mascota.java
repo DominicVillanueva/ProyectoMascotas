@@ -1,22 +1,34 @@
 package com.dominicavs.proyectomascotas.model;
 
 public class Mascota {
-    private String nombre;
+    private int id;
+    private String name;
     private int foto;
-    private int cantRaiting;
+    private int quantity_raiting;
 
-    public Mascota(String nombre, int foto, int cantRaiting) {
-        this.nombre = nombre;
+    public Mascota() {
+    }
+
+    public Mascota(String name, int foto, int quantity_raiting) {
+        this.name = name;
         this.foto = foto;
-        this.cantRaiting = cantRaiting;
+        this.quantity_raiting = quantity_raiting;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getId() {
+        return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getFoto() {
@@ -27,11 +39,21 @@ public class Mascota {
         this.foto = foto;
     }
 
-    public int getCantRaiting() {
-        return cantRaiting;
+    public int getQuantity_raiting() {
+        return quantity_raiting;
     }
 
-    public void setCantRaiting(int cantRaiting) {
-        this.cantRaiting = cantRaiting;
+    public void setQuantity_raiting(int quantity_raiting) {
+        this.quantity_raiting = quantity_raiting;
+    }
+
+    @Override
+    public String toString() {
+        return "Mascota{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", foto=" + foto +
+                ", quantity_raiting=" + quantity_raiting +
+                '}';
     }
 }
